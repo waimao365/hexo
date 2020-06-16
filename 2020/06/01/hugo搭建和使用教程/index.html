@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>hugo搭建和使用教程 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言  做博客就图个稳定，一次性买了10年的域名，搭配免费的github，适合做长期博客。  之前安装的hexo，可玩性非常强，前面文章有写一些关于hexo的安装使用教程，用了一年多，也发现了一些问题，hexo版本更新各种不兼容，访问速度慢，，很影响心情，自己都懒得搭理博客了，国内cdn加速需要备案，只是做个小站，不想太麻烦。  所幸，无意中发现荒野无灯大神把站转移到hugo，访问速度非常快，于是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hugo搭建和使用教程">
+<meta property="og:url" content="http://yoursite.com/2020/06/01/hugo%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言  做博客就图个稳定，一次性买了10年的域名，搭配免费的github，适合做长期博客。  之前安装的hexo，可玩性非常强，前面文章有写一些关于hexo的安装使用教程，用了一年多，也发现了一些问题，hexo版本更新各种不兼容，访问速度慢，，很影响心情，自己都懒得搭理博客了，国内cdn加速需要备案，只是做个小站，不想太麻烦。  所幸，无意中发现荒野无灯大神把站转移到hugo，访问速度非常快，于是">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-01T07:55:32.000Z">
+<meta property="article:modified_time" content="2020-06-05T04:36:02.234Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="网站">
+<meta property="article:tag" content="hugo">
+<meta property="article:tag" content="github">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hugo搭建和使用教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/06/01/hugo%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" class="article-date">
+  <time datetime="2020-06-01T07:55:32.000Z" itemprop="datePublished">2020-06-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/hugo/">hugo</a>►<a class="article-category-link" href="/categories/hugo/%E7%BD%91%E7%AB%99/">网站</a>►<a class="article-category-link" href="/categories/hugo/%E7%BD%91%E7%AB%99/github/">github</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hugo搭建和使用教程
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>  做博客就图个稳定，一次性买了10年的域名，搭配免费的github，适合做长期博客。<br>  之前安装的hexo，可玩性非常强，前面文章有写一些关于hexo的安装使用教程，用了一年多，也发现了一些问题，hexo版本更新各种不兼容，访问速度慢，，很影响心情，自己都懒得搭理博客了，国内cdn加速需要备案，只是做个小站，不想太麻烦。<br>  所幸，无意中发现荒野无灯大神把站转移到hugo，访问速度非常快，于是自己马上搭建了一个，打开文章页面基本上是秒开，之前hexo打开文章大约要5-6秒，用不同设备，不同网络测试很多次，hugo博客的访问速度要快4倍以上。并且文章越多，hugo的优势就越明显，为避免以后迁移麻烦，所以赶紧把博客迁到了hugo。主题也是我喜欢的，非常简洁。<br>  下面开始教程吧！！！</p>
+<h1 id="安装hugo"><a href="#安装hugo" class="headerlink" title="安装hugo"></a>安装hugo</h1><p>下载hugo <a href="https://gohugo.io" target="_blank" rel="noopener">https://gohugo.io</a><br>解压到任意目录，比如D:\hugo\bin<br>将Hugo添加到Windows的环境变量 PATH中<br>系统变量和用户变量都添加D:\hugo\bin<br>下载Git <a href="https://git-scm.com" target="_blank" rel="noopener">https://git-scm.com</a>  并安装<br>下载Go语言开发环境 <a href="https://golang.org/dl" target="_blank" rel="noopener">https://golang.org/dl</a>  并安装<br>打开Git Bash 输入 hugo version 出现hugo static site generator相关信息表示安装完成<br>打开D盘 右键点击 git bash here<br>输入hugo new site blog</p>
+<h1 id="安装主题"><a href="#安装主题" class="headerlink" title="安装主题"></a>安装主题</h1><p>去官网下载主题  <a href="https://themes.gohugo.io" target="_blank" rel="noopener">https://themes.gohugo.io</a><br>我下载的是even  <a href="https://themes.gohugo.io/hugo-theme-even" target="_blank" rel="noopener">https://themes.gohugo.io/hugo-theme-even</a><br>cd /blog<br>git clone <a href="https://github.com/olOwOlo/hugo-theme-even" target="_blank" rel="noopener">https://github.com/olOwOlo/hugo-theme-even</a> themes/even<br>安装好后 打开D:\blog\themes\even\exampleSite<br>找到config.toml和content 复制到D:\blog目录下<br>输入<br>hugo –theme=even –baseUrl=”ch0769.github.io” –buildDrafts<br> #even改成你的主题 ch0769.github.io也改成你的网址<br> 出现 public 文件夹  cd /public<br> 依次输入<br> git init<br> git add .<br> git commit -m “yyyy/mm/dd-hh:mm”<br> git remote add origin <a href="https://github.com/ch0769/ch0769.github.io.git" target="_blank" rel="noopener">https://github.com/ch0769/ch0769.github.io.git</a><br> git push -u origin master</p>
+<p>cd /blog<br>hugo<br>hugo server<br>可以本地预览了 <a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313</a></p>
+<h1 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h1><p>hugo new post\hugo搭建和使用教程.md<br>会在D:\blog\content\post  hugo搭建和使用教程.md<br>可以下载Visual Studio Code编辑和修改文章，记得换行前要先打两个空格，再按回车键。 </p>
+<h1 id="hugo使用教程"><a href="#hugo使用教程" class="headerlink" title="hugo使用教程"></a>hugo使用教程</h1><h2 id="添加固定链接"><a href="#添加固定链接" class="headerlink" title="添加固定链接"></a>添加固定链接</h2><p>这篇教程的加法参考如下<br>title: hugo搭建和使用教程<br>date: 2020-06-01 15:55:32<br>url: /hugodajian.html<br>（hugodajian 可以改成数字或者任意字母）</p>
+<h2 id="写文章后部署"><a href="#写文章后部署" class="headerlink" title="写文章后部署"></a>写文章后部署</h2><p>在blog目录输入hugo<br>在blog/public目录依次输入<br>git add .<br>git commit -m “yyyy/mm/dd-hh:mm”<br>git push -u origin master  </p>
+<h2 id="Netlify-自动编译部署生成-Web-网站"><a href="#Netlify-自动编译部署生成-Web-网站" class="headerlink" title="Netlify 自动编译部署生成 Web 网站"></a>Netlify 自动编译部署生成 Web 网站</h2><p>官方首页：<a href="https://www.netlify.com" target="_blank" rel="noopener">https://www.netlify.com</a>  </p>
+<h2 id="快速在Netlify建立Jekyll、Hexo、Hugo静态博客"><a href="#快速在Netlify建立Jekyll、Hexo、Hugo静态博客" class="headerlink" title="快速在Netlify建立Jekyll、Hexo、Hugo静态博客"></a>快速在Netlify建立Jekyll、Hexo、Hugo静态博客</h2><p>网站首页：<a href="https://www.staticgen.com/" target="_blank" rel="noopener">https://www.staticgen.com/</a><br>教程可以看这里 <a href="https://kuleyu.github.io/hexolog/post/31808.html" target="_blank" rel="noopener">https://kuleyu.github.io/hexolog/post/31808.html</a>   </p>
+<h2 id="写文章日期格式"><a href="#写文章日期格式" class="headerlink" title="写文章日期格式"></a>写文章日期格式</h2><p>date: 2020-06-01 15:55:32  </p>
+<h2 id="从hexo导入文章到hugo的固定链接设置"><a href="#从hexo导入文章到hugo的固定链接设置" class="headerlink" title="从hexo导入文章到hugo的固定链接设置"></a>从hexo导入文章到hugo的固定链接设置</h2><p>hexo设置 permalink: posts/:abbrlink.html<br>文章页面设置 abbrlink: 1   （每篇文章加一个数）<br>hugo固定链接设置<br>文章里面的<br>abbrlink: 1<br>改成<br>url: /posts/1.html<br>域名从hexo解析到hugo后，固定链接是不变的<br>也可以不用阿拉伯数字，随便输入其他字母也是可以的，这个看个人喜欢了。  </p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>绑域名非常简单，大家可以翻我前面的教程。<br>这里发现一个问题<br>绑定域名后<br>输入  git push -u origin master  出现错误如下<br>git上传文件出错[rejected] master -&gt; master (fetch first) error: failed to push some refs to<br>这个是因为github中的README.md文件不在本地代码目录中，可以通过如下命令进行代码合并<br>git pull –rebase origin master<br>再输入<br>git push origin master<br>就可以了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/06/01/hugo%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/" data-id="ckbh6nm1g000jlknu2rku5aro" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/06/02/n1%E7%BB%88%E6%9E%81%E7%8E%A9%E6%B3%95Armbian-5.77%E5%AE%89%E8%A3%85docker%E5%AE%9D%E5%A1%94openwrt%E5%92%8CHome%20Assistant/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          n1终极玩法Armbian-5.77安装docker宝塔openwrt和HomeAssistant
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/01/03/k2p%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E4%B9%8B%20cloudflare.com/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">k2p老毛子固件绑定域名之 cloudflare.com</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Github/">Github</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Github/hexo/">hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Github/hexo/PicGo/">PicGo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Github/hexo/PicGo/Jsdelivr/">Jsdelivr</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Github/hexo/%E5%9F%9F%E5%90%8D/">域名</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/N1/">N1</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/N1/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/N1/docker/%E5%AE%9D%E5%A1%94/">宝塔</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/N1/docker/%E5%AE%9D%E5%A1%94/openwrt/">openwrt</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/N1/docker/%E5%AE%9D%E5%A1%94/openwrt/Home-Assistant/">Home Assistant</a></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/">hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/%E7%BD%91%E7%AB%99/">网站</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hexo/%E7%BD%91%E7%AB%99/%E5%8D%9A%E5%AE%A2/">博客</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/">hugo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/%E7%BD%91%E7%AB%99/">网站</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/hugo/%E7%BD%91%E7%AB%99/github/">github</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/k2p/">k2p</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/k2p/%E5%9F%9F%E5%90%8D/">域名</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/k2p/%E5%9F%9F%E5%90%8D/cloudflare/">cloudflare</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/k2p/%E5%9F%9F%E5%90%8D/cloudflare/%E8%B7%AF%E7%94%B1/">路由</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/k2p/%E5%9F%9F%E5%90%8D/cloudflare/%E8%B7%AF%E7%94%B1/%E7%BD%91%E7%AB%99/">网站</a></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/">安卓手机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/LG-V30/">LG V30</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/LG-V30/%E5%88%B7%E6%9C%BA/">刷机</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/LG-V30/%E5%88%B7%E6%9C%BA/root/">root</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/twrp/">twrp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/twrp/recovery/">recovery</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/twrp/recovery/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/">安卓软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/APK-Downloader/">APK Downloader</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/APK-Downloader/cheome%E6%8F%92%E4%BB%B6/">cheome插件</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%90%E5%8A%A8/">支付宝运动</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%90%E5%8A%A8/%E4%B8%89%E6%98%9F%E5%81%A5%E5%BA%B7/">三星健康</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%90%E5%8A%A8/%E4%B8%89%E6%98%9F%E5%81%A5%E5%BA%B7/xposed/">xposed</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%90%E5%8A%A8/%E4%B8%89%E6%98%9F%E5%81%A5%E5%BA%B7/xposed/edxposed/">edxposed</a></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%90%E8%AE%AFN1/">斐讯N1</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%90%E8%AE%AFN1/omv/">omv</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%90%E8%AE%AFN1/omv/typecho/">typecho</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%90%E8%AE%AFN1/omv/typecho/lnmp/">lnmp</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%90%E8%AE%AFN1/omv/typecho/lnmp/mysql/">mysql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%90%E8%AE%AFN1/omv/typecho/lnmp/mysql/nginx/">nginx</a></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/">电脑软件</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/chrome/">chrome</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/chrome/Tampermonkey/">Tampermonkey</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/chrome/Tampermonkey/cheome%E6%8F%92%E4%BB%B6/">cheome插件</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/">电脑系统</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/PE/">PE</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/PE/%E9%A9%B1%E5%8A%A8/">驱动</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/PE/%E9%A9%B1%E5%8A%A8/mac/">mac</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/PE/%E9%A9%B1%E5%8A%A8/mac/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/PE/%E9%A9%B1%E5%8A%A8/mac/%E9%BB%91%E8%8B%B9%E6%9E%9C/linux/">linux</a></li></ul></li></ul></li></ul></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/">百度网盘下载</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%BB%91%E8%8B%B9%E6%9E%9C/">黑苹果</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/APK-Downloader/" rel="tag">APK Downloader</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/" rel="tag">Github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Home-Assistant/" rel="tag">Home Assistant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jsdelivr/" rel="tag">Jsdelivr</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LG-V30/" rel="tag">LG V30</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Mac/" rel="tag">Mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/N1/" rel="tag">N1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PE/" rel="tag">PE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PicGo/" rel="tag">PicGo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tampermonkey/" rel="tag">Tampermonkey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XQuickEnergy/" rel="tag">XQuickEnergy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cheome%E6%8F%92%E4%BB%B6/" rel="tag">cheome插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome/" rel="tag">chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cloudflare/" rel="tag">cloudflare</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/edxposed/" rel="tag">edxposed</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/" rel="tag">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F/" rel="tag">hexo备份还原</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/homeassistant/" rel="tag">homeassistant</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hugo/" rel="tag">hugo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/it%E8%BD%AF%E4%BB%B6/" rel="tag">it软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/k2p/" rel="tag">k2p</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/lnmp/" rel="tag">lnmp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mac/" rel="tag">mac</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/magisk/" rel="tag">magisk</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nginx/" rel="tag">nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/omv/" rel="tag">omv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/recovery/" rel="tag">recovery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/root/" rel="tag">root</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/twrp/" rel="tag">twrp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/typecho/" rel="tag">typecho</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xposed/" rel="tag">xposed</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B8%89%E6%98%9F%E5%81%A5%E5%BA%B7/" rel="tag">三星健康</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B7%E6%9C%BA/" rel="tag">刷机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag">域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/" rel="tag">安卓手机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/" rel="tag">安卓软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%9D%E5%A1%94/" rel="tag">宝塔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%88%B4%E5%B0%94E6430/" rel="tag">戴尔E6430</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%90%E5%8A%A8/" rel="tag">支付宝运动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%90%E8%AE%AFDC1/" rel="tag">斐讯DC1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%96%90%E8%AE%AFN1/" rel="tag">斐讯N1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/" rel="tag">电脑系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" rel="tag">电脑软件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/" rel="tag">百度网盘下载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD%E4%B8%8D%E9%99%90%E9%80%9F/" rel="tag">百度网盘下载不限速</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%AB%99/" rel="tag">网站</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%AF%E7%94%B1/" rel="tag">路由</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%A9%B1%E5%8A%A8/" rel="tag">驱动</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/" rel="tag">黑苹果</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/APK-Downloader/" style="font-size: 10px;">APK Downloader</a> <a href="/tags/Github/" style="font-size: 12.5px;">Github</a> <a href="/tags/Home-Assistant/" style="font-size: 10px;">Home Assistant</a> <a href="/tags/Jsdelivr/" style="font-size: 10px;">Jsdelivr</a> <a href="/tags/LG-V30/" style="font-size: 10px;">LG V30</a> <a href="/tags/Mac/" style="font-size: 10px;">Mac</a> <a href="/tags/N1/" style="font-size: 10px;">N1</a> <a href="/tags/PE/" style="font-size: 10px;">PE</a> <a href="/tags/PicGo/" style="font-size: 10px;">PicGo</a> <a href="/tags/Tampermonkey/" style="font-size: 10px;">Tampermonkey</a> <a href="/tags/XQuickEnergy/" style="font-size: 10px;">XQuickEnergy</a> <a href="/tags/cheome%E6%8F%92%E4%BB%B6/" style="font-size: 12.5px;">cheome插件</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/cloudflare/" style="font-size: 10px;">cloudflare</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/edxposed/" style="font-size: 12.5px;">edxposed</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/hexo%E5%A4%87%E4%BB%BD%E8%BF%98%E5%8E%9F/" style="font-size: 10px;">hexo备份还原</a> <a href="/tags/homeassistant/" style="font-size: 10px;">homeassistant</a> <a href="/tags/hugo/" style="font-size: 10px;">hugo</a> <a href="/tags/it%E8%BD%AF%E4%BB%B6/" style="font-size: 10px;">it软件</a> <a href="/tags/k2p/" style="font-size: 10px;">k2p</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/lnmp/" style="font-size: 15px;">lnmp</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/magisk/" style="font-size: 10px;">magisk</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/omv/" style="font-size: 12.5px;">omv</a> <a href="/tags/openwrt/" style="font-size: 10px;">openwrt</a> <a href="/tags/recovery/" style="font-size: 10px;">recovery</a> <a href="/tags/root/" style="font-size: 10px;">root</a> <a href="/tags/twrp/" style="font-size: 10px;">twrp</a> <a href="/tags/typecho/" style="font-size: 10px;">typecho</a> <a href="/tags/xposed/" style="font-size: 10px;">xposed</a> <a href="/tags/%E4%B8%89%E6%98%9F%E5%81%A5%E5%BA%B7/" style="font-size: 10px;">三星健康</a> <a href="/tags/%E5%88%B7%E6%9C%BA/" style="font-size: 10px;">刷机</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 12.5px;">博客</a> <a href="/tags/%E5%9F%9F%E5%90%8D/" style="font-size: 12.5px;">域名</a> <a href="/tags/%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA/" style="font-size: 17.5px;">安卓手机</a> <a href="/tags/%E5%AE%89%E5%8D%93%E8%BD%AF%E4%BB%B6/" style="font-size: 10px;">安卓软件</a> <a href="/tags/%E5%AE%9D%E5%A1%94/" style="font-size: 10px;">宝塔</a> <a href="/tags/%E6%88%B4%E5%B0%94E6430/" style="font-size: 10px;">戴尔E6430</a> <a href="/tags/%E6%94%AF%E4%BB%98%E5%AE%9D%E8%BF%90%E5%8A%A8/" style="font-size: 10px;">支付宝运动</a> <a href="/tags/%E6%96%90%E8%AE%AFDC1/" style="font-size: 10px;">斐讯DC1</a> <a href="/tags/%E6%96%90%E8%AE%AFN1/" style="font-size: 15px;">斐讯N1</a> <a href="/tags/%E7%94%B5%E8%84%91%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">电脑系统</a> <a href="/tags/%E7%94%B5%E8%84%91%E8%BD%AF%E4%BB%B6/" style="font-size: 15px;">电脑软件</a> <a href="/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD/" style="font-size: 10px;">百度网盘下载</a> <a href="/tags/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD%E4%B8%8D%E9%99%90%E9%80%9F/" style="font-size: 10px;">百度网盘下载不限速</a> <a href="/tags/%E7%BD%91%E7%AB%99/" style="font-size: 17.5px;">网站</a> <a href="/tags/%E8%B7%AF%E7%94%B1/" style="font-size: 10px;">路由</a> <a href="/tags/%E9%A9%B1%E5%8A%A8/" style="font-size: 10px;">驱动</a> <a href="/tags/%E9%BB%91%E8%8B%B9%E6%9E%9C/" style="font-size: 15px;">黑苹果</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/06/16/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/02/n1%E7%BB%88%E6%9E%81%E7%8E%A9%E6%B3%95Armbian-5.77%E5%AE%89%E8%A3%85docker%E5%AE%9D%E5%A1%94openwrt%E5%92%8CHome%20Assistant/">n1终极玩法Armbian-5.77安装docker宝塔openwrt和HomeAssistant</a>
+          </li>
+        
+          <li>
+            <a href="/2020/06/01/hugo%E6%90%AD%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/">hugo搭建和使用教程</a>
+          </li>
+        
+          <li>
+            <a href="/2020/01/03/k2p%E8%80%81%E6%AF%9B%E5%AD%90%E5%9B%BA%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%E4%B9%8B%20cloudflare.com/">k2p老毛子固件绑定域名之 cloudflare.com</a>
+          </li>
+        
+          <li>
+            <a href="/2019/12/27/%E5%85%B3%E4%BA%8E%E5%BE%AE%E5%BA%97%E8%B4%AD%E7%89%A9%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">关于微店购物的相关问题</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
